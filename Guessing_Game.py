@@ -49,7 +49,7 @@ attempt = 1
 best = load_best()
 
 if best is None:
-    print("No record yet")
+    print("Your current score will be the best high score.")
 else:
     print(f"Best so far: {best} tries")
 
