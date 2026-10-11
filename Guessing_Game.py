@@ -53,7 +53,9 @@ if best is None:
 else:
     print(f"Best so far: {best} tries")
 
-while attempt <= 7:
+max_tries = int(input("Choose the number of tries you want 5 or 7 : "))
+
+while attempt <= max_tries:
     user = get_number()
     result = check_guess(user, secret)
 
