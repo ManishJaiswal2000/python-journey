@@ -2,7 +2,7 @@
 
 A command-line game where you guess a secret number between 1 and 100 in 7 tries.
 
-## How to run
+## How to run code
 
     python Guessing_Game.py
 
