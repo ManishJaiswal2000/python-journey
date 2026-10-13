@@ -2,10 +2,10 @@
 
 
 # Calculate Total Expense
-def sum_expense(dict):
+def sum_expense(expenses):
     total = 0
-    for item in dict:
-        total += dict[item]
+    for item in expenses:
+        total += expenses[item]
     result = f"{total:.2f}"
     return result
 # print(sum_expense(dic_item))
@@ -17,7 +17,7 @@ def saving_expense(description, amount):
 def load_expense():
     with open("saving_expense.txt", "r") as f:
         text = f.read()
-    print(text)
+    print(text, end="")
     
 
 
