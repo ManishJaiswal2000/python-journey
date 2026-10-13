@@ -19,20 +19,21 @@ def load_expenses():
     try:
         with open("saving_expense.txt", "r") as f:
             for line in f:
-                striped_line = line.strip()
-                part = striped_line.split(",")
-                dict_item = {"description": part[0], "amount": float(part[1])}
-                expenses.append(dict_item)
+                line = line.strip()
+                if not line:
+                    continue
+                part = line.rsplit(",", 1)
+                expenses.append({"description": part[0], "amount": float(part[1])})
     except FileNotFoundError:
-        return expenses
+        pass
     return expenses
-# print(load_expenses())
     
 def view_expenses(expenses):
     if not expenses:
         print("No expenses yet")
     for expense in expenses:
         print(f"{expense['description']} : {expense['amount']:.2f}")
+
 
 
 expenses = load_expenses()
@@ -56,6 +57,7 @@ while True:
         break
     else:
         print("Invalid choice")
+
     
 
     
