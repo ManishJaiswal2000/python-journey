@@ -8,7 +8,6 @@ def sum_expense(expenses):
         total += item["amount"]
     result = f"{total:.2f}"
     return result
-# print(sum_expense(dic_item))
 
 def saving_expense(description, amount):
     with open("saving_expense.txt", "a") as f:
@@ -34,26 +33,30 @@ def view_expenses(expenses):
         print("No expenses yet")
     for expense in expenses:
         print(f"{expense['description']} : {expense['amount']:.2f}")
-        
+
 
 expenses = load_expenses()
 while True:
     print("Menu : 1. Add expense, 2. View all, 3. Total, 4. Quit.")
-    user = input("Please enter the type from above menu. What you want : ")
-    try:
-        if user == "Add expense":
-            description = input("Please enter the description : ")
+    choice = input("Enter 1, 2, 3, or 4 : ")
+    if choice == "1":
+        description = input("Please enter the description : ")
+        try:
             amount = float(input("Enter the amount : "))
+        except ValueError:
+            print("The entered amount is not a valid number.")
+        else:
             expenses.append({"description": description, "amount": amount})
             saving_expense(description, amount)
-        elif user == "View all":
-            view_expenses(expenses)
-        elif user == "Total":
-            print(sum_expense(expenses))
-        elif user == "Quit":
-            break
-    except ValueError:
-        print("The entered amount is not a valid number.")
+    elif choice == "2":
+        view_expenses(expenses)
+    elif choice == "3":
+        print(sum_expense(expenses))
+    elif choice == "4":
+        break
+    else:
+        print("Invalid choice")
+    
 
     
 
