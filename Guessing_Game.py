@@ -44,6 +44,18 @@ def load_best():
         return None
 
 
+def get_max_tries():
+    while True:
+        try:
+            tries = int(input("Choose 5 or 7 tries : "))
+            if tries == 5 or tries == 7:
+                return tries
+            else:
+                print("Please enter 5 or 7")
+        except ValueError:
+            print("That is not a number")
+
+
 # PART5: The game loop
 attempt = 1
 best = load_best()
@@ -53,7 +65,7 @@ if best is None:
 else:
     print(f"Best so far: {best} tries")
 
-max_tries = int(input("Choose the number of tries you want 5 or 7 : "))
+max_tries = get_max_tries()
 
 while attempt <= max_tries:
     user = get_number()
