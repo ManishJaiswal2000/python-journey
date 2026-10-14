@@ -33,19 +33,19 @@
 
 # OPTIONAL CHANLLENGE
 
-user_words = []
+# user_words = []
 
-while True:
-    user = input("Enter a word : ")
-    if(user == "done"):
-            break
-    user_words.append(user)
+# while True:
+#     user = input("Enter a word : ")
+#     if(user == "done"):
+#             break
+#     user_words.append(user)
     
 
-word_counter = {}
-for i in user_words:
-    if(i in word_counter):
-        word_counter[i] += 1
-    else:
-        word_counter[i] = 1
-print(word_counter)
+# word_counter = {}
+# for i in user_words:
+#     if(i in word_counter):
+#         word_counter[i] += 1
+#     else:
+#         word_counter[i] = 1
+# print(word_counter)
